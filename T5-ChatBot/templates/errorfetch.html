@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzTecX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/errorfetch.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">AzTecX</h1>
+        </div>
+    </div>
+
+    <div class="names-heading">
+        <video autoplay muted loop>
+            <source src="{{ url_for('static', filename='video/error500.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="second">
+        {% if message %}
+        <h3>Meta code - {{message}}</h3>
+        {% else %}
+        <h3>Meta Code - XXXNE</h3>
+        {% endif %}
+        <h3>Try Visiting the Main site or kindly contact <span> vaidhya.co@gmail.com </span> for Further Instruction.</h3>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/errorfetch.js') }}"></script>
+</body>
+
+</html>
